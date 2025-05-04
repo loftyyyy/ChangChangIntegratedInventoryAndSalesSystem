@@ -1,24 +1,13 @@
-<!doctype html>
-<html lang="{{str_replace('_', '-', app()->getLocale())}}">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body class="bg-gray-100">
-<div class="flex">
-    @include('components.header')
-    <div class="p-6 ml-64 ">
+<x-header>
+
+    <div class="p-6 ">
         <div class="bg-white rounded-xl shadow-md p-6">
             <form class="space-y-6">
                 <!-- Top Section: Type, Name, SKU, Unit, Image Upload -->
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
                 <div class="flex flex-col">
+                      
+                        <h1 class="p-2 text-3xl font-bold">Add new item</h1>
                         <!-- Name -->
                         <div>
                             <label class="block text-sm font-medium mb-2">Name*</label>
@@ -40,13 +29,13 @@
                         <div>
                             <label class="inline-flex items-center">
                                 <input type="checkbox" checked class="w-4 h-4">
-                                <span class="ml-2 text-sm">Returnable Item</span>
+                                <span class="ml-2 text-sm mt-2">Returnable Item</span>
                             </label>
                         </div>
                     </div>
 
                     <!-- Image Upload -->
-                    <div class="mb-4 w-92 flex flex-col">
+                    <div class="mb-4 mt-10 w-92 flex flex-col ml-24">
                         <label class="block text-sm font-medium mb-1">Upload Images</label>
                         <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50">
                             <div class="flex flex-col items-center justify-center pt-5 pb-6">
@@ -192,6 +181,4 @@
         </div>
     </div>
 </div>
-</body>
-
-</html>
+</x-header>

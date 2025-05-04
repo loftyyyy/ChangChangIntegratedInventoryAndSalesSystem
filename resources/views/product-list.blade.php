@@ -1,21 +1,9 @@
-<!doctype html>
-<html lang="{{str_replace('_', '-', app()->getLocale())}}">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body class="bg-gray-100">
+<x-header>
 <div class="flex">
- @include('components.header')
+
 
  
- <main class="flex-1 pl-64 pr-4 space-y-6 overflow-x-hidden">
+ <main class="flex-1 pr-4 space-y-6 overflow-x-hidden">
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg p-4">
 
     <div class="w-full p-4">
@@ -50,9 +38,9 @@
 
     <!-- Right: New Button --> 
     <div class="flex items-center space-x-2">
-    <button type="button" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-black hover:bg-gray-100 dark:hover:bg-gray-700 group">
+    <a href="new-item " class="flex items-center p-2 text-gray-900 rounded-lg dark:text-black hover:bg-gray-100 dark:hover:bg-gray-700 group">
       <i class="fa-solid fa-plus text-black dark:text-black group-hover:text-black dark:group-hover:text-black mr-2"></i>New 
-    </button>
+    </a>
 
     <button type="button" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-black hover:bg-gray-100 dark:hover:bg-gray-700 group">
       <i class="fa-solid fa-list text-black dark:text-black group-hover:text-black dark:group-hover:text-black mr-2"></i> 
@@ -125,5 +113,5 @@
 
  </div>
 </main> 
-</body>
-</html>
+</div>
+</x-header>

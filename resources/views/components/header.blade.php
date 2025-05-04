@@ -20,7 +20,7 @@
     @endif
     <title>{{$title ?? 'Home'}}</title>
 </head>
-<body class="flex">
+<body class="flex ">
 
 <button id="sidebarToggle" aria-controls="sidebar-multi-level-sidebar" type="button" class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 ">
         <span class="sr-only">Open sidebar</span>
@@ -30,7 +30,7 @@
     </button>
 
 
-<aside id="sidebar-multi-level-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+<aside id="sidebar-multi-level-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 " aria-label="Sidebar">
 
 <div class="w-full">
   <img src="images/sidebar.png" alt="ulo" class="w-full h-auto block object-cover">
@@ -56,10 +56,45 @@
                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                   </svg>
             </button>
+
             <ul id="dropdown-example" class="hidden py-2 space-y-2">
-                  <li>
-                     <a href="product-list" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-[#3A7CE0] dark:text-white ">Product List</a>
-                  </li>
+
+
+            <li class="list-none">
+              <div class="flex items-center w-full p-2 text-gray-900 rounded-lg dark:text-white hover:bg-[#3A7CE0] group">
+                
+                <!-- Link portion (icon + text) -->
+                <a href="product-list" class="flex-1 flex items-center">
+                  <i class="fa-brands fa-product-hunt text-gray-400 group-hover:text-white mr-4 transition-colors duration-200"></i>
+                  <span class="text-left rtl:text-right whitespace-nowrap">Product List</span>
+                </a>
+
+    <!-- Toggle icon (just toggles dropdown) -->
+            <button 
+              type="button" 
+              id="dropdownToggle" 
+              class="ml-auto"
+              aria-controls="dropdown-submenu"
+              aria-expanded="false"
+            >
+              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+              </svg>
+            </button>
+          </div>
+
+  <!-- Dropdown submenu -->
+                  <ul id="dropdown-submenu" class="hidden py-2 space-y-2 list-none pl-0">
+                    <li>
+                      <a href="product-overview" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-[#3A7CE0] dark:text-white">Product Overview</a>
+                    </li>
+                    <li>
+                      <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-[#3A7CE0] dark:text-white">Category</a>
+                    </li>
+                  </ul>
+                </li>
+
+
                   <li>
                      <a href="new-item" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-[#3A7CE0] dark:text-white ">Add Item</a>
                   </li>
@@ -150,8 +185,8 @@
    </div>
 </aside>
 
-<main class="ml-64 w-full">
-<div class="w-full border border-gray-300 shadow-lg p-4 sticky top-0 z-50">
+<main class="ml-64 w-full ">
+<div class="w-full border border-gray-300 shadow-lg p-4 sticky top-0 z-50 bg-white">
   <div class="flex justify-between items-center">
 
     <!-- Search Form -->
@@ -267,6 +302,17 @@
             dropdown.classList.toggle('hidden');
           });
         });
+
+     
+        
+
+            document.getElementById('dropdownToggle').addEventListener('click', function (e) {
+            e.preventDefault(); // prevent page jump
+            const submenu = document.getElementById('dropdown-submenu');
+            submenu.classList.toggle('hidden');
+          });
+
+
     </script>
 
 </body>

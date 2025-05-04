@@ -24,6 +24,19 @@ Route::get('product-list', function () {
     return view('product-list');
 });
 
+Route::get('new-item', function () {
+    return view('new-item');
+});
+
+Route::get('product-overview', function () {
+    return view('product-overview');
+});
+
+Route::get('product-transaction', function () {
+    return view('product-transaction');
+});
+
+
 
 Route::post('/', [AuthController::class, 'login'])->name('login');
 
