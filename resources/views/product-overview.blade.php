@@ -1,5 +1,5 @@
 <x-header>
-<div class="flex">
+<div class="flex p-6">
     
     <!-- Sidebar -->
         <aside class="w-64 bg-white shadow h-screen p-6">

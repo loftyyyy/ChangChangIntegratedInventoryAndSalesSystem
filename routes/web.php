@@ -36,6 +36,9 @@ Route::get('product-transaction', function () {
     return view('product-transaction');
 });
 
+Route::get('point-of-sale', function () {
+    return view('point-of-sale');
+});
 
 
 Route::post('/', [AuthController::class, 'login'])->name('login');
